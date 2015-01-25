@@ -8,6 +8,8 @@ jar {
     manifest {
         attributes 'Implementation-Title': 'Gradle Lego Mindstorms EV3 / Lejos Example Project', 'Implementation-Version': version
     }
+      // note this builds one fat jar and it is not recommended for production use - just for illustration purpose
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 repositories {
