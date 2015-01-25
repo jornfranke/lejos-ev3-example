@@ -1,0 +1,32 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '1.0'
+compileJava.options.encoding = 'UTF-8'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Lego Mindstorms EV3 / Lejos Example Project', 'Implementation-Version': version
+    }
+}
+
+repositories {
+	mavenCentral()
+     flatDir {
+       dirs  System.getenv('EV3_HOME')+'/lib/ev3'
+   }
+}
+
+dependencies {
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+     compile group: 'lejos', name: 'ev3classes', version: '1.0'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+task deployEV3 << {
+
+}
