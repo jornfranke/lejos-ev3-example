@@ -24,8 +24,8 @@ public class RobotApplication {
 		 final int SH = g.getHeight();
 		 Button.LEDPattern(4);
 		 Sound.beepSequenceUp();
-		 g.setFont(Font.getLargeFont());
-		 g.drawString("Lejos EV3 Robot Example", SW/2, SH/2, GraphicsLCD.BASELINE|GraphicsLCD.HCENTER);
+		 g.setFont(Font.getDefaultFont());
+		 g.drawString("Lejos EV3 Gradle", SW/2, SH/2, GraphicsLCD.BASELINE|GraphicsLCD.HCENTER);
 		 Button.LEDPattern(3);
 		 Delay.msDelay(4000);
 		 Button.LEDPattern(5);
